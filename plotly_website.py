@@ -40,13 +40,9 @@ dic_strategy_names = {dca_strategies_name[i]:dca_strategies[i] for i in range(le
 # Create the Dash app
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
-app = Dash(__name__)
+app = Dash(__name__, external_stylesheets=external_stylesheets)
 
 server = app.server
-
-# , external_stylesheets=external_stylesheets,
-#            suppress_callback_exceptions=True,
-#            prevent_initial_callbacks=True)
 
 # Set up the app layout
 title = html.H1('DCA calculation', style={'color':'darkorange', 
