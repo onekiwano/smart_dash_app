@@ -232,5 +232,5 @@ def update_graph(base=25, period=1, window=50, title_strat='Standard DCA', start
 
 # Run local server
 if __name__ == '__main__':
-    app.run_server(debug=False, port=8000, host='0.0.0.0')
+    app.run_server(debug=False, port=8050, host='0.0.0.0')
 
