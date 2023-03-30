@@ -81,7 +81,7 @@ amt_fig = px.line(crypto_df,
                   title=f'Amounts bought for Standard DCA strategy',)
 
 
-
+button_pay = html.A(html.Button("Go Home!"), href="https://buy.stripe.com/8wM5lP7spdJKfmM3cd")
 
 
 graph_price = dcc.Graph(figure=price_fig)
@@ -106,6 +106,9 @@ app.layout = html.Div([
                         html.Div(children=[
                             disp('End year', enddate_dropdown, style={"width":"50%"}),
                             ], style={'right':50, 'position':'relative', 'flex': 1}),
+                        html.Dic(children=[
+                          disp('Are you convienced?', button_pay, style={"width":"50%"}),
+                          ], style={'right':0, 'position':'relative', 'flex': 1}),
                     ], style={'display': 'flex', 'flex-direction': 'row'}),
                     html.Br(),
                     ## Price graph
