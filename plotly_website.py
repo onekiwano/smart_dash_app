@@ -117,10 +117,10 @@ app.layout = html.Div([
                             ], style={'left':70, 'position':'relative', 'flex': 1}),
                         html.Div(children=[
                                   disp('Strategy', dca_dropdown, style={"width":"40%"}),
-                              ], style={'left':80, 'position':'relative', 'flex': 1}),
+                              ], style={'left':100, 'position':'relative', 'flex': 1}),
                         html.Div(children=[
                             disp('Basis per day ($)', base_value, style={"width":"60%"}), 
-                            ], style={'right':50, 'position':'relative', 'flex': 1}),
+                            ], style={'flex': 1}),
                     ], style={'display': 'flex', 'flex-direction': 'row'}),
                     # Graph of buy
                     disp('', graph_amount),
