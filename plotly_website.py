@@ -80,9 +80,30 @@ amt_fig = px.line(crypto_df,
                   x='Date', y='Amounts',
                   title=f'Amounts bought for Standard DCA strategy',)
 
+style_button = {
+                'background-color': 'darkorange',
+                'border': 'none',
+                'color': 'white',
+                # 'padding': '15px 32px',
+                'text-align': 'center',
+                'text-decoration': 'none',
+                'display': 'inline-block',
+                'font-size': '16px',
+                }
 
-button_pay = html.A(html.Button("Go Home!"), href="https://buy.stripe.com/8wM5lP7spdJKfmM3cd")
+button_pay = html.A(html.Button("Subscribe now!", style=style_button), href="https://buy.stripe.com/8wM5lP7spdJKfmM3cd")
 
+logo = html.A(
+    href="https://onekiwano.github.io/",
+    children=[
+        html.Img(
+            alt="Go back to the website",
+            src="assets/kiwanologo.png",
+            style={'height':'70px', 'width':'70px'},
+        )
+    ]
+)
+footer = dcc.Markdown(children='Kiwano 2022-2023 &copy') 
 
 graph_price = dcc.Graph(figure=price_fig)
 graph_amount = dcc.Graph(figure=amt_fig)
@@ -106,8 +127,8 @@ app.layout = html.Div([
                         html.Div(children=[
                             disp('End year', enddate_dropdown, style={"width":"50%"}),
                             ], style={'right':50, 'position':'relative', 'flex': 1}),
-                        html.Dic(children=[
-                          disp('Are you convienced?', button_pay, style={"width":"50%"}),
+                        html.Div(children=[
+                          disp('Ready?', button_pay, style={"width":"50%"}),
                           ], style={'right':0, 'position':'relative', 'flex': 1}),
                     ], style={'display': 'flex', 'flex-direction': 'row'}),
                     html.Br(),
@@ -136,6 +157,11 @@ app.layout = html.Div([
                             disp('Period (day)', period_slider, style={"width":"80%"}),
                             ], style={'flex': 1}),
                         ], style={'display': 'flex', 'flex-direction': 'row'}),
+                html.Br(),
+                disp('', dcc.Markdown(children='---'), style={'text-align':'center'}),
+                html.Br(),
+                disp('', logo, style={'text-align':'center'}),
+                disp('', footer, style={'text-align':'center'}),
                 ])                     
 
 crypto_pair = 'BTCUSDT'
@@ -205,6 +231,7 @@ def update_graph(base=25, period=1, window=50, title_strat='Standard DCA', start
 
 
 # Run local server
+port = port + 1
 if __name__ == '__main__':
-    app.run_server(debug=False, port=8200, host='0.0.0.0')
+    app.run_server(debug=False, port=port, host='0.0.0.0')
 
