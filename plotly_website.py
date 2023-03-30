@@ -39,6 +39,7 @@ dic_strategy_names = {dca_strategies_name[i]:dca_strategies[i] for i in range(le
 
 # Create the Dash app
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
+
 app = Dash(__name__)
 
 # , external_stylesheets=external_stylesheets,
@@ -205,3 +206,4 @@ def update_graph(base=25, period=1, window=50, title_strat='Standard DCA', start
 # Run local server
 if __name__ == '__main__':
     app.run_server(debug=False, port=8200, host='0.0.0.0')
+
