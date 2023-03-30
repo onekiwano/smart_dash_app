@@ -42,6 +42,8 @@ external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
 app = Dash(__name__)
 
+server = app.server
+
 # , external_stylesheets=external_stylesheets,
 #            suppress_callback_exceptions=True,
 #            prevent_initial_callbacks=True)
