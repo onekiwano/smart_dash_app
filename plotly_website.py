@@ -48,7 +48,7 @@ server = app.server
 title = html.H1('DCA calculation', style={'color':'darkorange', 
                                           'fontsize':40,
                                           'text-align':'center'})
-decription_text = 'Welcome to the DCA and smart DCA calculator, in here you can check how awesome are our algos!'
+decription_text = "Welcome to the DCA and smart DCA calculator, in here, you can check how awesome our algo's are!"
 cum_ret = dcc.Markdown(children='')
 base_value = dcc.Input(value=25, min=0)
 
