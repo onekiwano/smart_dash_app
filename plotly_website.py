@@ -140,11 +140,11 @@ app.layout = html.Div([
                             disp('Summary:', cum_ret, style={"width":"120%"}),
                             ], style={'left':70, 'position':'relative', 'flex': 1}),
                         html.Div(children=[
-                                  disp('Strategy', dca_dropdown, style={"width":"40%"}),
-                              ], style={'left':180, 'position':'relative', 'flex': 1}),
+                                  disp('Strategy', dca_dropdown, style={"width":"120%",}),
+                              ], style={'left':700, "z-index": 0, 'position':'absolute', 'flex': 1}),
                         html.Div(children=[
-                            disp('Basis per day ($)', base_value, style={"width":"60%"}), 
-                            ], style={'flex': 1}),
+                            disp('Basis per day ($)', base_value, style={"width":"100%",}), 
+                            ], style={'left':900, "z-index": 1000, 'position':'absolute', 'flex': 1}),
                     ], style={'display': 'flex', 'flex-direction': 'row'}),
                     # Graph of buy
                     disp('', graph_amount),
@@ -232,5 +232,5 @@ def update_graph(base=25, period=1, window=50, title_strat='Standard DCA', start
 
 # Run local server
 if __name__ == '__main__':
-    app.run_server(debug=False, port=8000, host='0.0.0.0')
+    app.run_server(debug=False, port=8050, host='0.0.0.0')
 
