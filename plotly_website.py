@@ -91,7 +91,7 @@ style_button = {
                 'font-size': '16px',
                 }
 
-button_pay = html.A(html.Button("Subscribe now!", style=style_button), href="https://buy.stripe.com/8wM5lP7spdJKfmM3cd")
+button_pay = html.A(html.Button("Subscribe now!", style=style_button), href="https://buy.stripe.com/28oaG9eURaxydeEeUY")
 
 logo = html.A(
     href="https://onekiwano.github.io/",
